@@ -1,0 +1,27 @@
+{
+  "name": "firstapp",
+  "version": "1.0.0",
+  "description": "For creating a simple front end app - Amrendra",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amrendra05/firstapp.git"
+  },
+  "keywords": [
+    "GCP"
+  ],
+  "author": "Amrendra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amrendra05/firstapp/issues"
+  },
+  "homepage": "https://github.com/amrendra05/firstapp#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "express3-handlebars": "^0.5.2",
+    "routes": "^2.1.0"
+  }
+}
