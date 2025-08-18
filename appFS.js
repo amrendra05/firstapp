@@ -18,7 +18,7 @@ const database = client.db("local");
 */
 const datastore = new Datastore({
   projectId: 'first-gcp-app-468115', // replace with your Google Cloud project ID
-  keyFilename: 'C:\\Apps\\GCP\\key\\first-gcp-app-468115-833bb108540b.json', // replace with the path to your service account key file
+//  keyFilename: 'C:\\Apps\\GCP\\key\\first-gcp-app-468115-833bb108540b.json', // replace with the path to your service account key file
   databaseId: 'first-gcp-db'
 });
 app.get('/', function (req, res) {
@@ -42,13 +42,13 @@ app.post('/confirmation', function (req, res) {
       const newDoc = {
         "name": {
           "firstName": name,
-          "lastName": "Doe",
-          "Source": "Local",
+          "lastName": "",
+          "Source": "App Engine",
           "Target": "GCP Datastore"
         },
         "emailAddress": email
       };
-      const dockey = datastore.key(['customer', timeStamp]); // Use timestamp as the key
+      const dockey = datastore.key(['customer', timeStamp.toString().substring(4,16)]); // Use timestamp as the key
       const entity = {
         key: dockey,
         data: newDoc
@@ -75,7 +75,7 @@ app.post('/confirmation', function (req, res) {
   });
   return res.redirect('/confirmation.html?' + query);
 });
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+app.listen(8080, function () {
+  console.log('Example app listening on port 8080!');
 });
 //Test comment added to check if the file is being tracked by git
